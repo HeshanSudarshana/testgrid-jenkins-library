@@ -48,7 +48,7 @@ function cloneTestRepo(){
       if [[ $? != 0 ]];
         then
           log_error "Testing repo clone failed! Please check if the Git credentials or the test repo name is correct."
-          bash ${currentScript}/post-actions.sh ${deploymentName}
+        #   bash ${currentScript}/post-actions.sh ${deploymentName}
           exit 1
         else
           log_info "Cloning the test repo was successfull!"
@@ -74,11 +74,11 @@ function deploymentTest(){
     if [[ $? != 0 ]];
     then
         log_error "Executing post actions!"
-        bash ${currentScript}/post-actions.sh ${deploymentName}
+        # bash ${currentScript}/post-actions.sh ${deploymentName}
         exit 1
     else
         log_info "Test Execution Passed!"
-        bash ${currentScript}/post-actions.sh ${deploymentName}
+        # bash ${currentScript}/post-actions.sh ${deploymentName}
     fi
 }
 
